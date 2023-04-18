@@ -11,9 +11,9 @@ const Postera = styled.a`
   color: #fff;
 `;
 function Poster(props) {
-  const { url, img, name } = props;
+  const { url, img, name, id } = props;
   return (
-    <Postera href={url}>
+    <Postera href={url} key={id}>
       <img src={img} alt="포스터사진" />
       <span>{name}</span>
     </Postera>

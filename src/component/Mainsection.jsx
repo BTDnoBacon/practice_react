@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
 import Poster from './Poster';
@@ -12,32 +12,31 @@ const Posterdiv = styled.div`
   display: flex;
   flex-wrap: wrap;
 `;
-async function Mainsection() {
-  const dummy = await axios.get('dummy.json').then((response) => {
-    const a = response.data.movies.map((item) => <Poster key={item.id} />);
-    return a;
-  });
-  // .then((response) => response);
-  console.log(dummy);
-  console.log('---');
-  // const posterlist = dummy.movies.map(() => <Poster />);
-  // console.log(movies);
+function Mainsection() {
+  const [data, setData] = useState([]);
+  const [datastate, setDatastate] = useState(false);
+  const getData = async () => {
+    await axios.get('dummy.json').then((response) => {
+      setData(response.data);
+      setDatastate(true);
+    });
+  };
+  useEffect(() => {
+    getData();
+  }, []);
+
   return (
     <Maindiv>
       <div>영화 리스트</div>
-      {/* <button onClick={click} type="button">
-        눌러보기
-      </button> */}
       <Posterdiv>
-        {dummy.map((item) => {
-          console.log(item);
-          return <div>{item}</div>;
-        })}
+        {datastate
+          ? data.movies.map((item) => <Poster key={item.id} {...item} />)
+          : '로딩중'}
+        {/* <Poster url="아직없어요" />
         <Poster url="아직없어요" />
         <Poster url="아직없어요" />
         <Poster url="아직없어요" />
-        <Poster url="아직없어요" />
-        <Poster url="아직없어요" />
+        <Poster url="아직없어요" /> */}
       </Posterdiv>
     </Maindiv>
   );
