@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import NavbarItem from './Navbar_item';
-// import Login from './Login';
 
 const Navdiv = styled.div`
   display: flex;
@@ -29,8 +28,6 @@ function Navbar() {
         <NavbarItem name="연극" url="https://아직안정함" />
       </div>
       <div>
-        {/* <Login /> */}
-
         {/* <div onClick={}>로그인</div> */}
         <a href="Signup/">회원가입</a>
       </div>

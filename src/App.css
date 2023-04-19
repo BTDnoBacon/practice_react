@@ -1,3 +1,17 @@
+.signup {
+  display: none;
+}
+.signup.open {
+  display: flex;
+}
+
+.login {
+  display: none;
+}
+.login.open {
+  display: flex;
+}
+
 .App {
   text-align: center;
 }

@@ -1,16 +1,9 @@
 import React from 'react';
-import Navbar from './component/Navbar';
-import Mainsection from './component/Mainsection';
+import Index from './component/Index';
+import './App.css';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <Navbar />
-      </header>
-      <Mainsection />
-    </div>
-  );
+  return <Index />;
 }
 
 export default App;
