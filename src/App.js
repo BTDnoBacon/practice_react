@@ -1,9 +1,16 @@
 import React from 'react';
-import Index from './component/Index';
+import { Route, Routes } from 'react-router-dom';
+import Index from './component/main/Index';
+import Detail from './component/detail/Detail';
 import './App.css';
 
 function App() {
-  return <Index />;
+  return (
+    <Routes>
+      <Route path="/" element={<Index />} />
+      <Route path="/detail/:id" element={<Detail />} />
+    </Routes>
+  );
 }
 
 export default App;

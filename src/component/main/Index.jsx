@@ -10,15 +10,15 @@ const Navdiv = styled.div`
   height: 80px;
   justify-content: space-between;
   border-bottom: 2px solid #000;
-  padding: 0 2rem 0 2rem;
+  /* padding: 0 2rem 0 2rem; */
   background-color: #c4b5fd;
   position: fixed;
   width: 100%;
 `;
 const Button = styled.button`
   box-sizing: border-box;
-  width: 100px;
-  height: 3rem;
+  width: 80px;
+  height: 32px;
 `;
 function Index() {
   const [signupstate, setSignupstate] = useState(0);
@@ -50,7 +50,7 @@ function Index() {
       </Navdiv>
       <Signup divstate={signupstate} />
       <Login divstate={loginstate} />
-      <Mainsection />
+      <Mainsection kind="movie" />
     </>
   );
 }
